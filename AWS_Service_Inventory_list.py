@@ -11,3 +11,10 @@ for service in ["S3", "VPC", "RDS", "DynamoDB", "EC2", "CloudWatch"]:
 print(aws_services)
 print(len(aws_services))
 
+# Remove S3 & DynamoDB services from the list
+aws_services.remove("S3")
+aws_services.remove("DynamoDB")
+
+# Print the list & list length
+print(aws_services)
+print(len(aws_services))
