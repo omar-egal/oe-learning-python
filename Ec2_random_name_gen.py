@@ -15,7 +15,7 @@ def getName():
     output = ''
     for _ in repeat(None, number_of_instances):
             extra = ''.join(random.choice(string.ascii_letters + string.digits) for i in range(8))
-            output = department + extra
+            output = department + '_' + extra
             return output
 for i in repeat(None, number_of_instances):
     print(getName())
