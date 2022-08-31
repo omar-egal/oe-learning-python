@@ -20,10 +20,10 @@ def getName():
             
 
 #Loop to repeat fuction for the number of instances entered
-for i in repeat(None, number_of_instances):
-    deny = [x for x in departments if(x in departments)]
-    if deny == True:
-        print("Access denied")
-    else:
+c = departments.count(department.title())
+if c > 0:
+    print("The EC2 name generator cannot be used with the department: " + department + ". Please enter the name of a different department")
+else:
+    for i in repeat(None, number_of_instances):
         print(getName())
     
