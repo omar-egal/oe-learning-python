@@ -5,8 +5,9 @@ from itertools import repeat
 
 #Departments 
 departments =  ['Marketing', 'Accounting', 'FinOps']
+departments_lower = map(str.lower, departments)
 
-#INumber of instances and dpeartment name
+#Number of instances and department name
 number_of_instances = int(input("Please enter the number of EC2 instnaces required: "))
 department = str(input("Please enter a department name: "))
 
@@ -19,11 +20,11 @@ def getName():
             return output
             
 
-#Loop to repeat fuction for the number of instances entered
-for i in repeat(None, number_of_instances):
-    deny = [x for x in departments if(x in departments)]
-    if deny == True:
-        print("Access denied")
-    else:
+#Check if entered department us viable to use with generator
+if department.lower() in departments_lower:
+    print("The EC2 name generator cannot be used with the department: " + department + 
+    ". Please enter the name of a different department")
+else:
+    #Repeat output based on number of instances
+    for i in repeat(None, number_of_instances):
         print(getName())
-    
