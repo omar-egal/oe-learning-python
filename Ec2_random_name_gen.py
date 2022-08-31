@@ -31,7 +31,7 @@ def getName():
             return output
             
 
-#Check if entered department us viable to use with generator
+#Check if entered department is viable to use with generator
 if department.lower() in departments_lower:
     print("The EC2 name generator cannot be used with the department: " + department + 
     ". Please enter the name of a different department")
