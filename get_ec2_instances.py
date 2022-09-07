@@ -1,6 +1,5 @@
 import boto3
 
-
 #Describe instances. Filter for running instances in the dev Environment
 client = boto3.client('ec2')
 running_dev_clients = client.describe_instances(
@@ -12,7 +11,7 @@ running_dev_clients = client.describe_instances(
         }
     ])
 
-#loop to get instance IDs for the running dev instances
+#Loop to get instance IDs for the running dev instances
 dev_ids = []
 for reservation in running_dev_clients['Reservations']:
     for instance in reservation['Instances']:
@@ -21,7 +20,7 @@ for reservation in running_dev_clients['Reservations']:
     print(dev_ids)
 
 
-#Stop any running dev instnaces
+#Stop any running dev instnaces according to the instance IDs
 for i_d in dev_ids:
     response = client.stop_instances(
     InstanceIds=[
