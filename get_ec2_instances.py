@@ -17,8 +17,6 @@ for reservation in running_dev_clients['Reservations']:
     for instance in reservation['Instances']:
         dev_id = instance['InstanceId']
         dev_ids.append(dev_id)
-    print(dev_ids)
-
 
 #Stop any running dev instnaces according to the instance IDs
 for i_d in dev_ids:
