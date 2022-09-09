@@ -1,4 +1,5 @@
 import boto3
+import json
 
 #Describe instances. Filter for running instances in the dev Environment
 client = boto3.client('ec2')
@@ -17,7 +18,7 @@ for reservation in running_dev_clients['Reservations']:
     for instance in reservation['Instances']:
         dev_id = instance['InstanceId']
         dev_ids.append(dev_id)
-    print(dev_ids)
+    print(json.dumps(dev_ids, indent=2, default=str))
 
 #Stop any running dev instnaces according to the instance IDs
 if len(dev_ids) != 0:
